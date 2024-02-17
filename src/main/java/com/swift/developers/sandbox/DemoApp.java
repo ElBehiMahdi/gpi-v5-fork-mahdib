@@ -73,27 +73,41 @@ public class DemoApp {
                 if (!number.equalsIgnoreCase("")) {
                     if (StringUtils.isNumeric(number)) {
                         num = Integer.parseInt(number);
-                        if (num == 1) {
-                            StatusConfirmationCCT();
-                        } else if (num == 2) {
-                            StatusConfirmationCOV();
-                        }else if (num == 3) {
-                            StatusConfirmationFIT();
-                        }else if (num == 4) {
-                            StatusConfirmationINST();
-                        }else if (num == 5) {
-                            StatusConfirmationUni();
-                        }else if (num == 6) {
-                            getPaymentTransactionDetails();
-                        } else if (num == 7) {
-                            getChangedPaymentTransaction();
-                        } else if (num == 8) {
-                            CancelTransaction();
-                        } else if (num == 9) {
-                            TransactionCancellationStatus();
+                        switch (num) {
+                            case 1:
+                                StatusConfirmationCCT();
+                                break;
+                            case 2:
+                                StatusConfirmationCOV();
+                                break;
+                            case 3:
+                                StatusConfirmationFIT();
+                                break;
+                            case 4:
+                                StatusConfirmationINST();
+                                break;
+                            case 5:
+                                StatusConfirmationUni();
+                                break;
+                            case 6:
+                                getPaymentTransactionDetails();
+                                break;
+                            case 7:
+                                getChangedPaymentTransaction();
+                                break;
+                            case 8:
+                                CancelTransaction();
+                                break;
+                            case 9:
+                                TransactionCancellationStatus();
+                                break;
+                            default:
+                                // Handle invalid input
+                                break;
                         }
                     }
                 }
+
             } while (number.equalsIgnoreCase("") || !number.equalsIgnoreCase("bye"));
 
             scan.close();
